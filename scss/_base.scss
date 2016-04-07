@@ -3,7 +3,7 @@ body {
 	@include container(960px);
 }
 
-header,
+header h1,
 nav,
 main,
 aside,
@@ -22,9 +22,48 @@ aside {
 
 div,
 section {
-	@extend .clearfixed;
+	@include clearfixed;
 }
+
+/*div,
+section {
+	@extend .clearfixed;
+}*/
 
 .gallery img {
 	@include gallery(4);
 }
+
+
+//media
+@include susy-breakpoint($medium) {
+
+main {
+	@include span(6);
+}//main
+
+aside {
+	@include span(6);
+}//aside
+
+.gallery img {
+	@include gallery(6);
+}//gallery
+
+}//medium breakpoint
+
+@include susy-breakpoint($small) {
+
+main {
+	@include span(12);
+}//main
+
+aside {
+	@include span(12);
+}//aside
+
+.gallery img {
+	@include gallery(11);
+}//gallery
+
+}//small breakpoint
